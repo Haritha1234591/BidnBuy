@@ -20,7 +20,7 @@
     <?php
     require('db.php');
 
-    $result = mysqli_query($con, "SELECT username, review_text, rating, created_at FROM reviews ORDER BY created_at DESC");
+    $result = mysqli_query($con, "SELECT username, review_text, rating FROM reviews ORDER BY created_at DESC");
 
     echo "<h3 style='text-align:center;'>Reviews</h3>";
 
@@ -31,7 +31,7 @@
                         <th>Reviewer</th>
                         <th>Rating</th>
                         <th>Review</th>
-                        <th>Date</th>
+                    
                     </tr>
                 </thead>
                 <tbody>";
@@ -41,7 +41,7 @@
             echo "<td>" . htmlspecialchars($row['username']) . "</td>";
             echo "<td>" . htmlspecialchars($row['rating']) . "/5</td>";
             echo "<td>" . htmlspecialchars($row['review_text']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['created_at']) . "</td>";
+  
             echo "</tr>";
         }
 
